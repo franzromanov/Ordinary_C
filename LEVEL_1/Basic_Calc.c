@@ -31,6 +31,7 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+
 //declare
 bool stat=false;
 int stop=1;
@@ -55,7 +56,7 @@ float MLTPLY_CALC(float opr1, float opr2){
 }
 
 //division------------------------[4]
-float DIV_CALC(float opr1, float opr2){
+float DIV_CALC(float opr1, float opr2){ 
  return opr1/opr2;
 }
 
@@ -78,54 +79,54 @@ int main(){
 
 //user_input
  //title_
- fprintf(stdout,"\e[0;91m-----\e[0;97mBASIC \e[0;94mCALCULATOR\e[0;91m-----\n\n");
+ fprintf(stdout,"\e[0;91m-----\e[0;97mBASIC \e[0;94mCALCULATOR\e[0;91m-----\n\n"); 
  while(1){
- if(stop==0)break;
- fprintf(stdout,"\n\e[0;91m[INPUT]\e[0;97m:\n");
- //ask
- fscanf(stdin,"%lf%c%lf",&opr1,&op,&opr2);
- printf("%c\n",op);
-//operation
- switch(op){
-  //---------------------------[1]
-  case '+':
-   ACM=ADD_CALC(opr1,opr2);
-   break;
-  //---------------------------[2]
-  case '-':
-   ACM=SUB_CALC(opr1,opr2);
-   break;
-  //---------------------------[3]
-  case '*':
-   ACM=MLTPLY_CALC(opr1,opr2);
-   break;
-  //---------------------------[4]
-  case '/':
-   ACM=DIV_CALC(opr1,opr2);
-   break;
-  //---------------------------[5]
-  case '%':
-   ACM=MOD_CALC(opr1,opr2);
-   break;
-  //---------------------------[6]
-  case '^':
-   ACM=EXP_CALC(opr1,opr2);
-   break;
-//-----------------------------------------------------------//
-  default:
-   fprintf(stdout,"\e[0;91mWRONG INPUT!!!\n\n");
-   stat= ~stat;//toggled
-   break;
-}
+   if(stop==0)break;
+   fprintf(stdout,"\n\e[0;91m[INPUT]\e[0;97m:\n");
+   //ask
+   fscanf(stdin,"%lf%c%lf",&opr1,&op,&opr2);
+   printf("%c\n",op);
+  //operation
+   switch(op){
+    //---------------------------[1]
+    case '+':
+     ACM=ADD_CALC(opr1,opr2);
+     break;
+    //---------------------------[2]
+    case '-':
+     ACM=SUB_CALC(opr1,opr2);
+     break; 
+    //---------------------------[3]
+    case '*':
+     ACM=MLTPLY_CALC(opr1,opr2);
+     break;
+    //---------------------------[4]
+    case '/':
+     ACM=DIV_CALC(opr1,opr2);
+     break;
+    //---------------------------[5]
+    case '%':
+     ACM=MOD_CALC(opr1,opr2);
+     break;
+    //---------------------------[6]
+    case '^':
+     ACM=EXP_CALC(opr1,opr2);
+     break;
+  //-----------------------------------------------------------//
+    default:
+     fprintf(stdout,"\e[0;91mWRONG INPUT!!!\n\n");
+     stat= ~stat;//toggled
+     break;
+  }
 
-//out
- if(stat!=true)fprintf(stdout,"= %f\n",ACM);
- if(stat==true)stat=false;//toggled
- printf("%d\n",stat);
- fprintf(stdout,"\e[0;91mEXIT-->PRESS 0\n\e[0;94mCONTINUE-->PRESS 1.......\n");
- stop=1;
- fscanf(stdin,"%d",&stop);
- op=0;
+  //out
+   if(stat!=true)fprintf(stdout,"= %f\n",ACM);
+   if(stat==true)stat=false;//toggled
+   printf("%d\n",stat);
+   fprintf(stdout,"\e[0;91mEXIT-->PRESS 0\n\e[0;94mCONTINUE-->PRESS 1.......\n");
+   stop=1;
+   fscanf(stdin,"%d",&stop);
+   op=0;
 }
 //esc
  return 0;
