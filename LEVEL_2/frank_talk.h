@@ -8,7 +8,7 @@
 //banner
 void banner();
 //greet
-void frank_greet();
+int frank_greet();
 
 //play_chat
-void frank_play();
+int frank_react(int frank,int player);
