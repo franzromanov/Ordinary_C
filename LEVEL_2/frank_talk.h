@@ -1,10 +1,18 @@
-#include "frank_talk.h"
+//FRANKLIN_TALK_MOD
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+#include <unistd.h>
 
-//fight
-int fight(int* frank,int* player);
 
-//hit_point_Calculation
-int hitpoint(int* frank_hp,int* player_hp,int hit,int* strike_frnk,int* strike_plyr,int* effect);
+//banner
+void banner();
+//greet
+int frank_greet();
 
-//game_effect
-void game_effect(int effect);
+//play_chat
+void frank_react(int frank,int player);
+
+
+//hit_value
+int hit(int frank,int player);
