@@ -41,7 +41,7 @@ while(1){
  sleep(1);
 
 }
- if(player_hp<=0)fprintf(stdout,"   ----GAME OVER----\n\e[0;91m<<<YOU LOSE>>>\n");
+ if(player_hp<=0)fprintf(stdout,"----GAME OVER----\n\e[0;91m   <<<YOU LOSE>>>\n");
  if(frank_hp<=0)fprintf(stdout," ----GAME OVER----\n\e[0;94m<<<!!!YOU WIN!!!>>>\n");
 //esc
  return 0;
