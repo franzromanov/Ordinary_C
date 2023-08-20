@@ -1,3 +1,5 @@
+//FRANKLIN_TALK_MODULE
+//theme:MONOCHROME[B&W]
 #include "frank_talk.h"
 
 //banner------------------------------------------------------------------------[1]
@@ -46,9 +48,9 @@ int frank_greet(){
  char **paragraph;
 
 //sentences
- char line_1[]="[^ _ ^]/ : \"Greetings, my merry friend!\"\n";
- char line_2[]="[^ .^]-  : \"Welcome To Rock Paper Scissor game!\"\n";
- char line_3[]="[o 3o]\\  : \"Now shall I and thou engage in play?\"\n";
+ char line_1[]="[^ _ ^]/ : \"Greetings, my merry friend!\"\n\n";
+ char line_2[]="[^ .^]-  : \"Welcome To Rock Paper Scissor game!\"\n\n";
+ char line_3[]="[o 3o]\\  : \"Now shall I and thou engage in play?\"\n\n";
  char line_4[]="[You]    : (Y for we shall play, N for tis thou fly away)\n";
 
 //mem_manage
@@ -71,33 +73,51 @@ int frank_greet(){
  else return 0;
 }
 
-//play_react-----------------------------------------------------------------------[3]
-int frank_react(int frank,int player){
+//hit_value-----------------------------------------------------------------------[3]
+int hit(int frank,int player){
 
  //hit
  if(frank>player){
-  //dialog
-  char gotcha[]="[> 3 o]/ : \"Aye, Gotcha Lad!\"\n";
-  fprintf(stdout,"%s",gotcha);
   //esc
   return 1;
 }
  //parry
  if(frank==player){
-  //dialog
-  char focus[]="[o .o]   : \"A splendid move thou hast made!\"\n";
-  fprintf(stdout,"%s",focus);
   //esc
   return 0;
 }
 
 //damaged
  if(frank<player){
-  //dialog
-  char ouch[]="[T o T]  : \"OUCH,Tis Hurts!!!\"\n";
-  fprintf(stdout,"%s",ouch);
  //esc
  return (-1);
 }
+
+}
+
+//play_react-----------------------------------------------------------------------[4]
+void frank_react(int frank,int player){
+
+ //hit
+ if(frank>player){
+  //dialog
+  char gotcha[]="[> 3 o]/ : \"Aye, Gotcha Lad!\"\n";
+  fprintf(stdout,"%s",gotcha);
+}
+ //parry
+ if(frank==player){
+  //dialog
+  char focus[]="[o .o]   : \"A splendid move thou hast made!\"\n";
+  fprintf(stdout,"%s",focus);
+}
+
+//damaged
+ if(frank<player){
+  //dialog
+  char ouch[]="\e[0;94m[T o T]  :\e[0;91m \"OUCH,Tis Hurts!!!\"\n\e[0;97m";
+  fprintf(stdout,"%s",ouch);
+}
+
+
 
 }
