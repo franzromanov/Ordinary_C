@@ -1,4 +1,13 @@
-  GNU nano 7.2                                                                                                                                                RPS.c                                                                                                                                                          
+//WELCOME_codename::FRANKLIN
+#include "frank_talk.h"
+#include "gameplay.h"
+//declare
+int frank,player,player_hp,frank_hp,strike_frnk,strike_plyr,effect;
+int score;
+FILE* file;
+
+//main
+int main(){
 //initialize
  frank_hp=50;
  player_hp=50;
